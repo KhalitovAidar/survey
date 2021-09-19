@@ -39,6 +39,7 @@ class Survey(models.Model):
         Question, blank=True, on_delete=models.CASCADE,
         related_name="surveys",
     )
+    url = models.SlugField(max_length=160, unique=True, null=True)
 
     def __str__(self):
         return self.name
