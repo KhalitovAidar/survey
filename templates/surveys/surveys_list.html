@@ -1,0 +1,55 @@
+    <div class="left-ads-display col-lg-9">
+        <div class="row">
+            {% for survey in survey_list %}
+                <div class="col-md-4 product-men">
+                    <div class="product-shoe-info editContent text-center mt-lg-4">
+                        <div class="men-thumb-item">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="item-info-product">
+                            <h4 class="">
+                                   Опрос: {{ survey.name }}
+                            </h4>
+
+                            <div class="product_price">
+                                <div class="grid-price">
+                                    <span class="money editContent">Вопрос: {{ survey.question }}</span>
+                                </div>
+                            </div>
+                            <div class="answer">
+
+                            <form action="{% url 'add_answer' survey.id %}" method="post" id="formAnswer">
+                            {% csrf_token %}
+
+                                    <label>
+                                        Ваш комент
+                                        </label>
+
+                                    <input type="text" size="40" name="text">
+                                    <button type="Submit" name="submit" value="Submit">Ваш комент</button>
+
+                                {% if submitbutton == "Submit" %}
+                                    <h1>Your first name is {{ text }}</h1>
+
+                                {% endif %}
+
+                            </form>
+                            </div>
+                            <ul class="stars">
+                                <li>
+                                </li>
+                                <li>
+                                </li>
+                                <li>
+                                </li>
+                                <li>
+                                </li>
+                                <li>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>

@@ -1,0 +1,22 @@
+{% block content %}
+<section class="ab-info-main py-md-5 py-4 editContent" style="padding-left: 3rem; padding-right: 3rem;">
+            {% block container %}
+            <div class="container-fluid py-md-3">
+            {% endblock container %}
+                <div class="row">
+                {% block sidebar %}
+                <div class="side-bar col-lg-3">
+                {% endblock sidebar %}
+                </div>
+                    {%  block survey  %}
+                    {% endblock survey %}
+                </div>
+            </div>
+</section>
+{% endblock content %}
+
+{% if survey.question.type == 'text_field' %}
+                                    <input type="text" size="40">
+                                    <a href="{% url 'create' %}"><button type="submit">Добавить ответ</button></a>
+                                    <button type="submit">Добавить ответ</button>
+                                {% endif %}
