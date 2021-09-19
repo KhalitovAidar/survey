@@ -9,3 +9,5 @@ urlpatterns = [
     path('add_answer/<int:pk>', views.SurveyListView.as_view(), name='add_answer'),
     path('api/surveys/', SurveyViewApi.as_view()),
 ]
+
+пше
